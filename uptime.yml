@@ -1,6 +1,6 @@
 --- 
 - 
-  name: "Get uptime first"
+  name: Uptime
   register: hello
   shell: uptime
 - 
