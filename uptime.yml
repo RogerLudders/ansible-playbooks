@@ -1,7 +1,1 @@
----
-- name: Get Server Uptime
 
-shell: uptime
-register: hello
-- debug: msg="{{ hello.stdout }}"
-- debug: msg="{{ hello.stderr }}"
