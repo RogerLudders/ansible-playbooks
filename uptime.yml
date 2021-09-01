@@ -1,7 +1,9 @@
----
-
-- name: Get uptime first
-shell: uptime
-register: hello
-- debug: msg="{{ hello.stdout }}"
-- debug: msg="{{ hello.stderr }}"
+--- 
+- 
+  name: "Get uptime first"
+  register: hello
+  shell: uptime
+- 
+  debug: "msg=\"{{ hello.stdout }}\""
+- 
+  debug: "msg=\"{{ hello.stderr }}\""
