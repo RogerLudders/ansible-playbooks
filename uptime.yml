@@ -1,9 +1,0 @@
---- 
-- 
-  name: Uptime
-  register: hello
-  shell: uptime
-- 
-  debug: "msg=\"{{ hello.stdout }}\""
-- 
-  debug: "msg=\"{{ hello.stderr }}\""
