@@ -1,6 +1,5 @@
 --- 
 - 
-  changed_when: false
   name: "get uptime"
   register: ret
   shell: uptime
