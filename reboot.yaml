@@ -1,0 +1,15 @@
+---
+- name: Boot It
+  become: yes
+  hosts: ls01
+
+  tasks:
+
+  - name: Reboot
+    reboot:
+
+  - name: Ping to verify connectivity
+    ansible.builtin.ping:
+
+  - name: All Done
+    shell: echo "Reboot Complete"
