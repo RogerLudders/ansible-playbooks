@@ -4,9 +4,10 @@
   tasks: 
 
 - name: Update apt-cache and do dist upgrade
-  apt: update_cache: yes
-       cache_valid_time: 3600
-       upgrade: dist
+  apt: 
+  update_cache: yes
+  cache_valid_time: 3600
+  upgrade: dist
 
 - name: Check if reboot required
   stat:
@@ -15,4 +16,4 @@
 
 - name: Reboot if required
   reboot:
-  when: reboot_required_file.stat.exists == true   
+  when: reboot_required_file.stat.exists == 
