@@ -1,11 +1,12 @@
 ---
 - name: Hello World!
   gather_facts: true
-  hosts: zeus
-         rudebox
-         jinan
-         ftp
-         c7
+  hosts: #zeus
+         #rudebox
+         #jinan
+         #ftp
+         #c7
+         all
 
   tasks:
   - name: Ping to verify connectivity
