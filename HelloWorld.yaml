@@ -1,6 +1,6 @@
 ---
 - name: Hello World!
-  gather_facts = true
+  gather_facts: true
   hosts: zeus
          rudebox
          jinan
