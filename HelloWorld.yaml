@@ -1,6 +1,11 @@
 ---
 - name: Hello World!
-  hosts: localhost
+  gather_facts = true
+  hosts: zeus
+         rudebox
+         jinan
+         ftp
+         c7
 
   tasks:
   - name: Ping to verify connectivity
