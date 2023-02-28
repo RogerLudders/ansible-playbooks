@@ -15,7 +15,6 @@
       stat: path=/var/run/reboot-required
       register: reboot_required_file
     
-    - name: Reboot the box if kernel updated
+    - name: Reboot if Kernel updated
       reboot:
-      msg: Reboot initiated by Ansible for kernel updates
-      when: reboot_required_file.stat.exists
+        when: reboot_required_file.stat.exists
