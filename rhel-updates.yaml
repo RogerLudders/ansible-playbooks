@@ -14,26 +14,31 @@
         name: '*'
         state: latest  
 
-    - name: check to see if we need a reboot
-      command: needs-restarting -r
-      register: result
-      ignore_errors: yes
+    - name: Check if reboot_required
+      shell:
+      cmd: "needs-restarting -r"
+      changed_when: false
+      failed_when: reboot_required.rc != 0 and reboot_required.rc != 1
+      check_mode: false
+      register: reboot_required
 
-    - name: display result
+    - name: Report reboot_required
       debug:
-        var: result.rc
+      msg: "{{  reboot_required.rc | bool }} "
+      changed_when: reboot_required.rc == 1
+      check_mode: false
 
 
-    #- name: Check if a reboot is needed on all servers
-    #  register: reboot_required_file
-    #  stat: path=/var/run/reboot-required get_md5=no
+    - name: Check if a reboot is needed on all servers
+      register: reboot_required_file
+      stat: path=/var/run/reboot-required get_md5=no
 
-    #- name: Reboot the box if kernel updated
-    #  reboot:
-    #   msg: "Reboot initiated by Ansible for kernel updates"
-    #    connect_timeout: 5
-    #    reboot_timeout: 300
-    #    pre_reboot_delay: 0
-    #    post_reboot_delay: 30
-    #    test_command: uptime
-    #  when: reboot_required_file.stat.exists
+    - name: Reboot the box if kernel updated
+      reboot:
+       msg: "Reboot initiated by Ansible for kernel updates"
+        connect_timeout: 5
+        reboot_timeout: 300
+        pre_reboot_delay: 0
+        post_reboot_delay: 30
+        test_command: uptime
+      when: reboot_required ==
