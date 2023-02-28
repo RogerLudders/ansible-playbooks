@@ -1,1 +1,15 @@
-
+---
+# Playbook to apply the latest RHEL updates
+      
+# Apply Updates
+- name: Dev Yum updates 
+  gather_facts: true
+  become: true
+  become_user: root  
+  hosts: all
+                 
+  tasks:
+    - name: Upgrade all packages
+      yum:
+        name: '*'
+        state: latest  
