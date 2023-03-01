@@ -1,0 +1,12 @@
+---
+- hosts: bs
+  gather_facts: no
+  #pre_tasks:
+  #  - name: read/write
+  #    raw: ansible bs -m raw -a "mount -o remount,rw /" -b --vault-password-file=vault.txt
+  #    delegate_to: localhost
+  tasks:
+    - name: uptime
+      raw: uptime
+    #- name: read only
+    #  raw: mount -o remount,ro /
