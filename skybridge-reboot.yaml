@@ -6,8 +6,8 @@
    ansible_remote_tmp: /tmp
     
   tasks:  
-   # - name: Reboot
-   #   reboot:
+    - name: Reboot
+      reboot:
 
     - name: Ping to verify connectivity
       ansible.builtin.ping:
