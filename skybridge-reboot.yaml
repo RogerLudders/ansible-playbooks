@@ -4,6 +4,11 @@
   become: true
     
   tasks:
-    - name: Reboot the Skybridge # Using RAW due to Read Only Filesystem
-      raw: reboot
+    #- name: Reboot the Skybridge # Using RAW due to Read Only Filesystem
+    #  raw: reboot
     
+    - name: Reboot
+      reboot:
+
+    - name: Ping to verify connectivity
+     ansible.builtin.ping:
