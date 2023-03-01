@@ -11,4 +11,4 @@
       reboot:
 
     - name: Ping to verify connectivity
-     ansible.builtin.ping:
+      ansible.builtin.ping:
