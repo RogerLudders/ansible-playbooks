@@ -2,13 +2,12 @@
 - hosts: skybridge
   gather_facts: no
   become: true
-  pre_tasks:
-    - name: read/write
-      raw: rpi-rw
+  vars:
+   ansible_remote_tmp: /tmp
     
   tasks:  
-    - name: Reboot
-      reboot:
+   # - name: Reboot
+   #   reboot:
 
     - name: Ping to verify connectivity
       ansible.builtin.ping:
