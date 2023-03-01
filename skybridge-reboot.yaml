@@ -2,11 +2,11 @@
 - hosts: skybridge
   gather_facts: no
   become: true
+  pre_tasks:
+    - name: read/write
+      raw: rpi-rw
     
-  tasks:
-    #- name: Reboot the Skybridge # Using RAW due to Read Only Filesystem
-    #  raw: reboot
-    
+  tasks:  
     - name: Reboot
       reboot:
 
