@@ -1,6 +1,6 @@
 ---
-- hosts: all
-  become: c7
+- hosts: c7
+  become: true
   vars:
   tasks:
    
