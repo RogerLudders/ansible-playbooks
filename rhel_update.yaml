@@ -13,6 +13,8 @@
     - name: Check if an upgrade is required
       command: /usr/bin/needs-restarting -r
       register: reboot_required
+    - debug:
+      vars: reboot_required.stdout_lines 
          
     - name: Reboot system if kernel was updated
       reboot:
