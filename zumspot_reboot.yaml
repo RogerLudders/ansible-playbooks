@@ -1,1 +1,13 @@
+---
+- hosts: zumspot
+  gather_facts: no
+  become: true
+  vars:
+   ansible_remote_tmp: /tmp
+    
+  tasks:  
+    - name: Reboot
+      reboot:
 
+    - name: Ping to verify connectivity
+      ansible.builtin.ping:
