@@ -1,6 +1,6 @@
 ---
 - hosts: clearnode
-  gather_facts: no
+  gather_facts: yes
   become: true
   vars:
    ansible_remote_tmp: /tmp
