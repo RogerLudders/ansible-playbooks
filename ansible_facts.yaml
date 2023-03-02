@@ -1,8 +1,7 @@
 ---
-- name: Boot It
+- name: List Ansible Facts
   gather_facts: true
   hosts: all
-    
-- name: Print all available facts
-  ansible.builtin.debug:
-  var: ansible_facts
+  tasks:
+    - debug:
+        var: ansible_facts   
