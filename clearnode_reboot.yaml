@@ -1,9 +1,9 @@
 ---
 - hosts: clearnode
   gather_facts: no
-  become: true
-  vars:
-   ansible_remote_tmp: /tmp
+  #become: true
+  #vars:
+  # ansible_remote_tmp: /tmp
     
   tasks:  
     - name: Reboot
