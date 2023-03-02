@@ -5,9 +5,7 @@
   hosts: jammy
 
   tasks:
-
   - name: Reboot
     reboot:
-
   - name: Ping to verify connectivity
     ansible.builtin.ping:
