@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  become: true
+  become: c7
   vars:
   tasks:
    
@@ -13,9 +13,8 @@
     - name: Check if an upgrade is required
       command: /usr/bin/needs-restarting -r
       register: reboot_required
-      failed_when: reboot_required.rc not in (0,1)
-
+         
     - name: Reboot system if kernel was updated
       reboot:
       when:
-        - reboot_required.rc is defined
+        - reboot_required.rc == 1
