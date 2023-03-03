@@ -1,11 +1,10 @@
-- name: Stop Secondary Oracle DB
+---
+- name: Start all VM's on Hypervisor
   gather_facts: false
-  become: true
-  become_user: oracle
-  hosts: qldboran2
+  hosts: xcphost2
   tasks:
-    - name: Stopping DB
-      shell: /home/oracle/scripts/dbs_shutdown.ksh              
-      register: dbstatus
+    - name: Starting VM's
+      shell: /usr/local/bin/vm-start-all 
+      register: vmstatus
     - debug:
-       var: dbstatus.stdout_lines 
+       var: vmstatus.stdout_lines 
