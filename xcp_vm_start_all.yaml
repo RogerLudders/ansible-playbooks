@@ -5,5 +5,3 @@
   tasks:
     - name: Starting VM's
       shell: /usr/local/bin/vm-start-all 
-    - debug:
-       msg: All VM's have been successfully started
