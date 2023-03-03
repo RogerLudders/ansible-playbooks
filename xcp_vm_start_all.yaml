@@ -5,6 +5,5 @@
   tasks:
     - name: Starting VM's
       shell: /usr/local/bin/vm-start-all 
-      register: vmstatus
     - debug:
-       var: vmstatus.stdout_lines 
+       msg: All VM's have been successfully started
