@@ -1,7 +1,7 @@
 ---
 - name: Start all VM's on Hypervisor
   gather_facts: false
-  hosts: xcphost2
+  hosts: xcphost3
   tasks:
     - name: Starting VM's
       shell: /usr/local/bin/vm-start-all 
