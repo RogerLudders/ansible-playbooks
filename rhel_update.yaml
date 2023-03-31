@@ -23,5 +23,5 @@
       - name: Reboot Required
         ansible.builtin.reboot:
             msg: "Reboot initiated by Ansible after Linux kernel update"
-            reboot_timeout: 3600
+            reboot_timeout: 300
             test_command: w
