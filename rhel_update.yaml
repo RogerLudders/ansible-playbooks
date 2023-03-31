@@ -4,13 +4,13 @@
   vars:
   tasks:
    
-    - name: Upgrade all packages
+    - name: Upgrade All Packages
       yum:
         name: '*'
         state: latest
         update_only: true
 
-    - name: Needs reboot
+    - name: Is a Rebooted Needed?
       ansible.builtin.command: needs-restarting -r
       register: reg_reboot_required
       ignore_errors: true
